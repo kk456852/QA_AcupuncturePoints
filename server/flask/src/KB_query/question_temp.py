@@ -13,7 +13,7 @@ SPARQL_PREXIX = u"""
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX : <http://www.semanticweb.org/张涛/ontologies/2019/1/untitled-ontology-32#>
+PREFIX : <http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#>
 """
 
 SPARQL_SELECT_TEM = u"{prefix}\n" + \
@@ -58,75 +58,21 @@ class QuestionSet:
         pass
 
     @staticmethod
-    def has_album(word_object):
+    def to_zhiyu(word_object):
+        #桂枝汤方课用于治疗
         select = u"?x"
         sparql = None
 
         for w in word_object:
-            if w.pos == pos_person:
-                e = u" :{person} :release ?o."\
-                    u" ?o :album_name ?x.".format(person=w.token.decode('utf-8'))
-            sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
-                                              select=select,
-                                              expression=e)
-            break
-        return sparql
-    @staticmethod
-    def has_content(word_object):
-        select = u"?o"
-        sparql = None
-
-        for w in word_object:
-            if w.pos == pos_song:
-                e = u" :{song} :song_content ?o.".format(song=w.token.decode('utf-8'))
+            if w.pos == tang_ji:
+                e = u" :{tangji} :治疗_to ?o."\
+                    u"?x.".format(tangji=w.token.decode('utf-8'))
             sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
                                               select=select,
                                               expression=e)
             break
         return sparql
 
-    @staticmethod
-    def person_inroduction(word_object):
-        select = u"?o"
-        sparql = None
-
-        for w in word_object:
-            if w.pos == pos_person:
-                e = u" :{person} :singer_introduction ?o.".format(person=w.token.decode('utf-8'))
-            sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
-                                              select=select,
-                                              expression=e)
-            break
-        return sparql
-
-    @staticmethod
-    def stay_album(word_object):
-        select = u"?x"
-        sparql = None
-
-        for w in word_object:
-            if w.pos == pos_song:
-                e = u" :{song} :include_by ?o."\
-                    u" ?o :album_name ?x.".format(song=w.token.decode('utf-8'))
-            sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
-                                              select=select,
-                                              expression=e)
-            break
-        return sparql
-
-    @staticmethod
-    def release_album(word_object):
-        select = u"?o"
-        sparql = None
-
-        for w in word_object:
-            if w.pos == pos_album:
-                e = u" :{album} :album_release_date ?o." .format(album=w.token.decode('utf-8'))
-            sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
-                                              select=select,
-                                              expression=e)
-            break
-        return sparql
 
 
 
@@ -135,48 +81,24 @@ class QuestionSet:
 
 
 # TODO 定义关键词
-pos_person = "nr"
-pos_song = "nz"
-pos_album = "nz"
-
-person_entity = (W(pos=pos_person))
-song_entity = (W(pos=pos_song))
-album_entity = (W(pos=pos_album))
+zheng_zhuang = "nz"
+tang_ji = "nz"
+pei_xue = "nz"
 
 
-category = (W("类型") | W("种类"))
-several = (W("多少") | W("几部"))
+zheng_zhuang_entity = (W(pos=zheng_zhuang))
+tang_ji_entity = (W(pos=tang_ji))
+pei_xue_entity = (W(pos=pei_xue))
 
-higher = (W("大于") | W("高于"))
-lower = (W("小于") | W("低于"))
-compare = (higher | lower)
+tangji = (W("汤剂"))
 
-birth = (W("生日") | W("出生") + W("日期") | W("出生"))
-birth_place = (W("出生地") | W("出生"))
-english_name = (W("英文名") | W("英文") + W("名字"))
-introduction = (W("介绍") | W("是") + W("谁") | W("简介"))
-person_basic = (birth | birth_place | english_name | introduction)
 
-song_content = (W("歌词") | W("歌") | W("内容"))
-release = (W("发行") | W("发布") | W("发表") | W("出"))
-movie_basic = (introduction | release)
 
-when = (W("何时") | W("时候"))
-where = (W("哪里") | W("哪儿") | W("何地") | W("何处") | W("在") + W("哪"))
 
 # TODO 问题模板/匹配规则
 """
 """
 rules = [
-    Rule(condition_num=2, condition=person_entity + Star(Any(), greedy=False) + album + Star(Any(), greedy=False), action=QuestionSet.has_album),
-    Rule(condition_num=2, condition=song_entity + Star(Any(), greedy=False) + song_content + Star(Any(), greedy=False),
-         action=QuestionSet.has_content),
-    Rule(condition_num=2, condition=person_entity + Star(Any(), greedy=False) + introduction + Star(Any(), greedy=False),
-         action=QuestionSet.person_inroduction),
-    Rule(condition_num=2, condition=song_entity + Star(Any(), greedy=False) + album + Star(Any(), greedy=False),
-         action=QuestionSet.stay_album),
-    Rule(condition_num=2, condition=song_entity + Star(Any(), greedy=False) + release + Star(Any(), greedy=False),
-         action=QuestionSet.release_album),
-
+    Rule(condition_num=2, condition=tang_ji_entity + Star(Any(), greedy=False) + tangji + Star(Any(), greedy=False), action=QuestionSet.to_zhiyu)   
 ]
 
