@@ -59,7 +59,6 @@ class QuestionSet:
 
     @staticmethod
     def has_album(word_object):
-        #周杰伦的专辑
         select = u"?x"
         sparql = None
 
@@ -74,7 +73,6 @@ class QuestionSet:
         return sparql
     @staticmethod
     def has_content(word_object):
-        #晴天的歌词
         select = u"?o"
         sparql = None
 
@@ -89,7 +87,6 @@ class QuestionSet:
 
     @staticmethod
     def person_inroduction(word_object):
-        # 周杰伦的介绍
         select = u"?o"
         sparql = None
 
@@ -104,7 +101,6 @@ class QuestionSet:
 
     @staticmethod
     def stay_album(word_object):
-        # 以父之名是哪个专辑的歌曲
         select = u"?x"
         sparql = None
 
@@ -120,7 +116,6 @@ class QuestionSet:
 
     @staticmethod
     def release_album(word_object):
-        # 叶惠美是哪一年发行的
         select = u"?o"
         sparql = None
 
@@ -149,10 +144,6 @@ song_entity = (W(pos=pos_song))
 album_entity = (W(pos=pos_album))
 
 
-singer = (W("歌手") | W("歌唱家") | W("艺术家") | W("艺人") | W("歌星"))
-album = (W("专辑") | W("合辑") | W("唱片"))
-song = (W("歌") | W("歌曲"))
-
 category = (W("类型") | W("种类"))
 several = (W("多少") | W("几部"))
 
@@ -175,11 +166,6 @@ where = (W("哪里") | W("哪儿") | W("何地") | W("何处") | W("在") + W("�
 
 # TODO 问题模板/匹配规则
 """
-1.周杰伦的专辑都有什么？
-2.晴天的歌词是什么？
-3.周杰伦的生日是哪天？
-4.以父之名是哪个专辑里的歌曲？
-5.叶惠美是哪一年发行的？
 """
 rules = [
     Rule(condition_num=2, condition=person_entity + Star(Any(), greedy=False) + album + Star(Any(), greedy=False), action=QuestionSet.has_album),

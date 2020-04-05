@@ -12,7 +12,7 @@ if __name__ == '__main__':
     # TODO 连接Fuseki服务器。
     fuseki = jena_sparql_endpoint.JenaFuseki()
     # TODO 初始化自然语言到SPARQL查询的模块，参数是外部词典列表。
-    q2s = question2sparql.Question2Sparql(['./external_dict/jay.txt'])
+    q2s = question2sparql.Question2Sparql(['./external_dict/word.txt'])
 
     while True:
         question = input()
