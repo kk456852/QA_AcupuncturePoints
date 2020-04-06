@@ -22,7 +22,7 @@ class Tagger:
 
 # TODO 用于测试
 if __name__ == '__main__':
-    tagger = Tagger(['./external_dict/jay.txt'])
+    tagger = Tagger(['./external_dict/word.txt'])
     while True:
         s = input()
         for i in tagger.get_word_objects(s):

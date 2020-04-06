@@ -27,11 +27,11 @@ if __name__ == '__main__':
             if len(value) == 0:
                 print('I don\'t know. :(')
             elif len(value) == 1:
-                print (value[0])
+                print (value[0][72:])
             else:
                 output = ''
                 for v in value:
-                    output += v + u'、'
+                    output += v[72:] + u'、'
                 print (output[0:-1])
 
         else:

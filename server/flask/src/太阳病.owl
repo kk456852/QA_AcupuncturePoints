@@ -126,12 +126,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#厥阴病 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#厥阴病"/>
-    
-
-
     <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#反汗恶风 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#反汗恶风">
@@ -158,18 +152,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#太阳病 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#太阳病"/>
-    
-
-
-    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#太阴病 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#太阴病"/>
-    
-
-
     <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#小柴胡汤方 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#小柴胡汤方">
@@ -183,18 +165,6 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#小青龙汤方">
         <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤剂"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#少阳病 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#少阳病"/>
-    
-
-
-    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#少阴病 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#少阴病"/>
     
 
 
@@ -424,12 +394,6 @@
         <配穴_to rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#反汗恶风"/>
         <详细配穴>后溪，申脉，天柱，筋缩。</详细配穴>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#阳明病 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#阳明病"/>
     
 
 

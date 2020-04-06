@@ -65,8 +65,7 @@ class QuestionSet:
 
         for w in word_object:
             if w.pos == tang_ji:
-                e = u" :{tangji} :治疗_to ?o."\
-                    u"?x.".format(tangji=w.token.decode('utf-8'))
+                e = u" :{tangji} :治疗_to ?x.".format(tangji=w.token.decode('utf-8'))
             sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
                                               select=select,
                                               expression=e)
@@ -90,15 +89,16 @@ zheng_zhuang_entity = (W(pos=zheng_zhuang))
 tang_ji_entity = (W(pos=tang_ji))
 pei_xue_entity = (W(pos=pei_xue))
 
-tangji = (W("汤剂"))
-
+tangji = (W("汤方"))
+bingzheng = (W("病症"))
 
 
 
 # TODO 问题模板/匹配规则
 """
+#桂枝汤方用于治疗
 """
 rules = [
-    Rule(condition_num=2, condition=tang_ji_entity + Star(Any(), greedy=False) + tangji + Star(Any(), greedy=False), action=QuestionSet.to_zhiyu)   
+    Rule(condition_num=2, condition=tang_ji_entity + Star(Any(), greedy=False) + bingzheng + Star(Any(), greedy=False), action=QuestionSet.to_zhiyu)   
 ]
 
