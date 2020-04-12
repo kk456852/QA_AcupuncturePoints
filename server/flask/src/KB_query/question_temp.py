@@ -65,14 +65,60 @@ class QuestionSet:
 
         for w in word_object:
             if w.pos == tang_ji:
-                e = u" :{tangji} :治疗_to ?x.".format(tangji=w.token.decode('utf-8'))
+                e = u" :{tangji} :治疗_to ?o."\
+                    u" ?o :症状名称 ?x.".format(tangji=w.token.decode('utf-8'))
+            sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
+                                              select=select,
+                                              expression=e)
+            break
+        return sparql
+    
+    @staticmethod
+    def to_xuewei(word_object):
+        #中风需要搭配的穴位
+        select = u"?x"
+        sparql = None
+
+        for w in word_object:
+            if w.pos == zheng_zhuang:
+                e = u" :{bingzheng} :配穴_by ?o."\
+                    u" ?o :详细配穴 ?x.".format(bingzheng=w.token.decode('utf-8'))
             sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
                                               select=select,
                                               expression=e)
             break
         return sparql
 
+    @staticmethod
+    def to_tangji(word_object):
+        #治疗中风的汤剂
+        select = u"?x"
+        sparql = None
 
+        for w in word_object:
+            if w.pos == zheng_zhuang:
+                e = u" :{bingzheng} :治疗_by ?o."\
+                    u" ?o :汤方名称 ?x.".format(bingzheng=w.token.decode('utf-8'))
+            sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
+                                              select=select,
+                                              expression=e)
+            break
+        return sparql
+
+    @staticmethod
+    def to_zhize(word_object):
+        #桂枝汤方的治则效果
+        select = u"?x"
+        sparql = None
+
+        for w in word_object:
+            if w.pos == tang_ji :
+                e = u" :{tangji} :汤方治则 ?x.".format(tangji=w.token.decode('utf-8'))
+            sparql = SPARQL_SELECT_TEM.format(prefix=SPARQL_PREXIX,
+                                              select=select,
+                                              expression=e)
+            break
+        return sparql
 
 
 
@@ -91,14 +137,25 @@ pei_xue_entity = (W(pos=pei_xue))
 
 tangji = (W("汤方"))
 bingzheng = (W("病症"))
-
-
+xuewei =(W("穴位"))
+zhiliao = (W("治疗"))
+zhize = (W("治则"))
 
 # TODO 问题模板/匹配规则
 """
-#桂枝汤方用于治疗
+#桂枝汤方用于治疗病症
+#中风需要搭配的穴位
+#治疗中风的汤方
+#桂枝汤方的治则效果
 """
 rules = [
-    Rule(condition_num=2, condition=tang_ji_entity + Star(Any(), greedy=False) + bingzheng + Star(Any(), greedy=False), action=QuestionSet.to_zhiyu)   
+    Rule(condition_num=2, condition=tang_ji_entity + Star(Any(), greedy=False) + bingzheng + Star(Any(), greedy=False), action=QuestionSet.to_zhiyu) ,
+    Rule(condition_num=2, condition=zheng_zhuang_entity + Star(Any(), greedy=False) + xuewei + Star(Any(), greedy=False), action=QuestionSet.to_xuewei), 
+    Rule(condition_num=2, condition=zheng_zhuang_entity + Star(Any(), greedy=False) + tangji + Star(Any(), greedy=False), action=QuestionSet.to_tangji) ,
+    Rule(condition_num=2, condition=tang_ji_entity + Star(Any(), greedy=False) + zhize + Star(Any(), greedy=False), action=QuestionSet.to_zhize)
 ]
+
+
+
+
 
