@@ -56,9 +56,21 @@
     
 
 
+    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤方名称 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤方名称"/>
+    
+
+
     <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤方治则 -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤方治则"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#症状名称 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#症状名称"/>
     
 
 
@@ -114,6 +126,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#症状"/>
         <治疗_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝汤方"/>
         <配穴_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴1"/>
+        <症状名称>中风</症状名称>
     </owl:NamedIndividual>
     
 
@@ -132,6 +145,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#症状"/>
         <治疗_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝加葛根汤方"/>
         <配穴_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴3"/>
+        <症状名称>反汗恶风</症状名称>
     </owl:NamedIndividual>
     
 
@@ -182,6 +196,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#症状"/>
         <治疗_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝汤方"/>
         <配穴_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴2"/>
+        <症状名称>恶风</症状名称>
     </owl:NamedIndividual>
     
 
@@ -250,6 +265,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤剂"/>
         <治疗_to rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#中风"/>
         <治疗_to rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#恶风"/>
+        <汤方名称>桂枝汤方</汤方名称>
         <汤方治则>健胃养肌，调卫和营。</汤方治则>
     </owl:NamedIndividual>
     
