@@ -150,6 +150,28 @@
     
 
 
+    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#发汗恶风 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#发汗恶风">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#症状"/>
+        <治疗_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝加附子汤方"/>
+        <配穴_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴5"/>
+        <症状名称>发汗恶风</症状名称>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#哮喘 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#哮喘">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#症状"/>
+        <治疗_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝加厚朴杏子汤方"/>
+        <配穴_by rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴4"/>
+        <症状名称>哮喘</症状名称>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#四逆汤方 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#四逆汤方">
@@ -217,6 +239,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝加厚朴杏子汤方 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝加厚朴杏子汤方">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤剂"/>
+        <治疗_to rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#哮喘"/>
+        <汤方名称>桂枝加葛根汤方</汤方名称>
+        <汤方治则>解饥降逆定喘</汤方治则>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝加芍药生姜各一两人身三两新加汤方 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝加芍药生姜各一两人身三两新加汤方">
@@ -230,6 +263,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝加葛根汤方">
         <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤剂"/>
         <治疗_to rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#反汗恶风"/>
+        <汤方名称>桂枝加葛根汤方</汤方名称>
         <汤方治则>解饥生津</汤方治则>
     </owl:NamedIndividual>
     
@@ -239,6 +273,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝加附子汤方">
         <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤剂"/>
+        <治疗_to rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#发汗恶风"/>
+        <汤方名称>桂枝加附子汤方</汤方名称>
+        <汤方治则>扶阳解肌</汤方治则>
     </owl:NamedIndividual>
     
 
@@ -246,14 +283,6 @@
     <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝去桂加茯苓白术汤方 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝去桂加茯苓白术汤方">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤剂"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝汤加厚朴杏子汤方 -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#桂枝汤加厚朴杏子汤方">
         <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#汤剂"/>
     </owl:NamedIndividual>
     
@@ -409,6 +438,26 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴"/>
         <配穴_to rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#反汗恶风"/>
         <详细配穴>后溪，申脉，天柱，筋缩。</详细配穴>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴"/>
+        <配穴_to rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#哮喘"/>
+        <详细配穴>鱼际，合谷，阳溪，丰隆</详细配穴>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#配穴"/>
+        <配穴_to rdf:resource="http://www.semanticweb.org/kizzy/ontologies/2020/2/untitled-ontology-11#发汗恶风"/>
+        <详细配穴>百会，气海，委中，足三里</详细配穴>
     </owl:NamedIndividual>
     
 

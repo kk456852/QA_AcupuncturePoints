@@ -26,8 +26,19 @@
     -->
     <title>React App</title>
   </head>
+ 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+    document.onkeydown = function (event) {
+   var e = event || window.event;
+      if (e && e.keyCode == 13) { //回车键的键值为13
+        //调用登录按钮的登录事件
+         var x=  document.getElementById("查询")
+         x.click()
+      }
+    }; 
+    </script>
     <div id="root"></div>
     <!--
       This HTML file is a template.
